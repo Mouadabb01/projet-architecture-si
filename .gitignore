@@ -1,0 +1,9 @@
+# Files/folders to ignore for the front‑end repo
+# Exclude PHP back‑end code and database dumps
+*.php
+*.sql
+*.sql.gz
+/config/
+/database_init.sql
+/full_schema.sql
+

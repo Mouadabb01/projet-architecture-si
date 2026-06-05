@@ -1,0 +1,278 @@
+/* Style global */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Dégradé élégant */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Adapte la hauteur à l'écran */
+    color: #333;
+    overflow-x: hidden; /* Évite le défilement horizontal */
+}
+
+/* Conteneur principal */
+.payment-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet d'adapter les sections */
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 950px;
+    margin: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation subtile d'apparition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section gauche : Formulaire */
+.payment-form {
+    padding: 30px;
+    width: 60%;
+    background: linear-gradient(135deg, #f7f9fc, #ffffff);
+    border-right: 2px solid #e5e5e5;
+    box-sizing: border-box; /* Gestion des marges internes */
+}
+
+.title {
+    font-size: 2rem;
+    color: #34495e;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Champs de formulaire */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 8px rgba(106, 17, 203, 0.3);
+}
+
+/* Champs côte à côte */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1; /* Les champs prennent le même espace */
+}
+
+/* Calculateur */
+.cost-calculator p {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.cost-calculator .total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #e67e22;
+}
+
+/* Bouton */
+.pay-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pay-button:hover {
+    background: linear-gradient(135deg, #574b90, #1b5fc3);
+    transform: scale(1.03);
+}
+/* Résumé de paiement avec QR Code */
+.payment-summary {
+    padding: 30px;
+    width: 40%;
+    background: #34495e;
+    color: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.summary-header {
+    margin-bottom: 20px;
+}
+
+.summary-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #6a11cb;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.qr-section {
+    margin-top: 20px;
+}
+
+#qr-code {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.qr-instruction {
+    font-size: 1rem;
+    color: #ecf0f1;
+    margin-top: 10px;
+}
+
+.pay-button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: #6a11cb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pay-button:hover {
+    background: #574b90;
+    transform: scale(1.02);
+}
+
+.pay-button:active {
+    transform: scale(0.97);
+}
+
+.pdf-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pdf-instruction {
+    font-size: 1rem;
+    color: #ecf0f1;
+    margin-bottom: 10px;
+}
+
+.pay-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: #6a11cb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.pay-button:hover {
+    background: #574b90;
+    transform: scale(1.02);
+}
+
+.pay-button:active {
+    transform: scale(0.97);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .payment-container {
+        flex-direction: column; /* Les sections passent en mode colonne */
+    }
+
+    .payment-form {
+        width: 100%; /* Prend toute la largeur */
+        border-right: none;
+        border-bottom: 2px solid #e5e5e5; /* Ligne de séparation subtile */
+    }
+
+    .payment-summary {
+        width: 100%; /* Prend toute la largeur */
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .pay-button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .summary-title {
+        font-size: 1.2rem;
+    }
+}

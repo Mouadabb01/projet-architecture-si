@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accueil - Let's Go Travel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="acceuil.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" style="background-color: transparent">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Let's Go Travel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="accueil.php">Accueil</a></li>
+
+                    <!-- MENU PERSONNALISATION -->
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="#" onclick="toggleSubMenu(event, 'subMenuPerso')">Personnalisation</a>
+                        <div id="subMenuPerso" class="position-absolute bg-white shadow rounded d-none"
+                            style="top: 100%; left: 0; z-index: 1000;">
+                            <a class="dropdown-item" href="volperso.php">Personnalisation des vols</a>
+                            <a class="dropdown-item" href="perso.php">Personnalisation d'hôtel</a>
+                        </div>
+                    </li>
+
+                    <!-- MENU NOS PACKS -->
+                    <li class="nav-item position-relative">
+                        <a class="nav-link" href="#" onclick="toggleSubMenu(event, 'subMenuPacks')">Nos Services</a>
+                        <div id="subMenuPacks" class="position-absolute bg-white shadow rounded d-none"
+                            style="top: 100%; left: 0; z-index: 1000;">
+                            <a class="dropdown-item" href="packs.php">Nos Packs</a>
+                            <a class="dropdown-item" href="offreservice.php">Nos Offres</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Contacter nous</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inscription.php">S'inscrire</a></li>
+
+                    <?php if (isset($_SESSION['user'])): ?>
+                        <li class="nav-item"><a class="nav-link" href="#">Bienvenue <?php echo $_SESSION['user']; ?></a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="logout.php">Déconnexion</a></li>
+                    <?php else: ?>
+                        <li class="nav-link icon" onclick="openModal()"><i class="fas fa-sign-in-alt"></i> Connexion</li>
+                    <?php endif; ?>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SCRIPT CORRIGÉ -->
+    <script>
+        function toggleSubMenu(event, menuId) {
+            event.preventDefault();
+            const allMenus = document.querySelectorAll('.nav-item .position-absolute');
+            allMenus.forEach(menu => {
+                if (menu.id !== menuId) {
+                    menu.classList.add('d-none');
+                }
+            });
+            const menu = document.getElementById(menuId);
+            menu.classList.toggle('d-none');
+        }
+
+        document.addEventListener('click', function (e) {
+            const openMenus = document.querySelectorAll('.nav-item .position-absolute');
+            openMenus.forEach(menu => {
+                const trigger = menu.previousElementSibling;
+                if (!menu.contains(e.target) && !trigger.contains(e.target)) {
+                    menu.classList.add('d-none');
+                }
+            });
+        });
+    </script>
+    <!-- Modal Connexion -->
+    <div id="loginModal" class="modal" class="container d-flex justify-content-center align-items-center"
+        style="min-height: 80vh;">
+        <div class="card p-4" style="width: 400px;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Connexion</h3>
+                
+                <form method="POST" action="">
+                    <input type="text" name="username" placeholder="Identifiant" required />
+                    <input type="password" name="password" placeholder="Mot de passe" required />
+                    <input type="submit" name="login" value="Se connecter" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openModal() {
+            document.getElementById("loginModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("loginModal").style.display = "none";
+        }
+        window.onclick = function (event) {
+            const modal = document.getElementById("loginModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+<body>
+    <!-- HEADER / CAROUSEL -->
+    <header>
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="images/header.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas les vidéos HTML5.
+            </video>
+            <div class="content">
+                <h1>Let's Go Travel</h1>
+                <p>Découvrez des destinations incroyables.</p>
+                <a href="#exploration" class="btn-explore">Explorer</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- qui sommesnous -->
+    <section id="qui-sommes-nous" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="images/quisommes.jpg" alt="Équipe Let's Go Travel" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">Qui sommes-nous ?</h2>
+                    <p class="section-text">
+                        Chez <strong>Let's Go Travel</strong>, nous croyons que chaque voyage est une aventure unique
+                        qui mérite d’être vécue pleinement. Fondée par des passionnés de découvertes, notre équipe
+                        s'engage à offrir des expériences exceptionnelles pour chaque type de voyageur. De la détente
+                        aux explorations culturelles, nous sommes là pour rendre vos rêves accessibles.
+                    </p>
+                    <p class="section-text">
+                        Notre objectif est de vous inspirer et vous guider vers les destinations les plus incroyables,
+                        tout en simplifiant la planification de votre voyage. Avec nous, le monde est à votre portée.
+                    </p>
+                    <a href="#packs" class="btn-discover">Découvrir nos offres</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION PERSONNALISATION STYLE MODERNE -->
+    <section class="hero-section" id="personnalisation">
+        <div class="container">
+            <div class="hero-content text-white text-center">
+                <h1 class="display-4 fw-bold">Personnalisez Votre Voyage</h1>
+                <p class="lead mb-4">Créez une expérience sur mesure en fonction de vos envies et de vos besoins</p>
+                <div class="search-box glassmorphism mx-auto mt-4 p-4 rounded-4 shadow-lg" style="max-width: 800px;">
+                    <div
+                        style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+                        <h1 style="text-align: center; margin-bottom: 20px;" style="color: black;">Trouver votre
+                            destination</h1>
+
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <strong>Destination</strong>
+                            <p>Où souhaitez-vous ?</p>
+                        </div>
+
+                        <div style="display: flex; justify-content: center; width: 100%;">
+                            <input type="text" placeholder="Entrez une destination..."
+                                style="padding: 10px; width: 300px; margin-right: 10px;">
+                            <button
+                                style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">
+                                Rechercher
+                            </button>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-3">
+                            <label class="form-label text-white">Arrivée</label>
+                            <input type="date" class="form-control form-control-lg">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label text-white">Départ</label>
+                            <input type="date" class="form-control form-control-lg">
+                        </div> -->
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- SECTION PACKS -->
+    <section class="container my-5 section-fade-in" id="packs">
+        <h2 class="text-center mb-4 fw-bold" style="color: black;">Nos Packs Voyages</h2>
+        <p class="text-center text-muted mb-5">Choisissez l'expérience qui correspond à vos envies et laissez-nous vous
+            emmener vers des destinations de rêve.</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card shadow pack-card h-100 border-0">
+                    <img src="images/paris.jpg" class="card-img-top rounded-top" alt="Pack Romantique - Paris">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Pack Romantique - Paris</h5>
+                        <p class="card-text text-muted">3 jours, 2 nuits dans un hôtel 4*, dîner croisière inclus.</p>
+                        <button class="btn btn-primary mt-3">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow pack-card h-100 border-0">
+                    <img src="images/Bali.jpg" class="card-img-top rounded-top" alt="Pack Aventure - Bali">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Pack Aventure - Bali</h5>
+                        <p class="card-text text-muted">7 jours au cœur de la jungle avec excursions guidées.</p>
+                        <button class="btn btn-primary mt-3">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow pack-card h-100 border-0">
+                    <img src="images/newyork.jpg" class="card-img-top rounded-top" alt="Pack Urbain - New York">
+                    <div class="card-body text-center">
+                        <h5 class="card-title fw-bold">Pack Urbain - New York</h5>
+                        <p class="card-text text-muted">5 jours en centre-ville avec visite de la Statue de la Liberté.
+                        </p>
+                        <button class="btn btn-primary mt-3">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--les evenemnets -->
+    <section class="events-section py-5 bg-light" id="events">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold" style="color: black;">Événements Importants</h2>
+            <p class="text-center text-muted mb-5">Découvrez les grands événements qui marquent le monde et préparez vos
+                voyages pour en profiter pleinement.</p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="event-card shadow rounded h-100 p-4">
+                        <img src="images/maroceve.jpg" alt="Coupe du Monde au Maroc" class="img-fluid rounded mb-3">
+                        <h3 class="fw-bold">Coupe du Monde au Maroc</h3>
+                        <p>Rejoignez l'excitation du football international au Maroc, où les meilleures équipes du monde
+                            s'affrontent. Une ambiance inoubliable vous attend !</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="event-card shadow rounded h-100 p-4">
+                        <img src="images/carnaval.jpg" alt="Festival de Rio" class="img-fluid rounded mb-3">
+                        <h3 class="fw-bold">Festival de Rio</h3>
+                        <p>Plongez dans le célèbre Carnaval de Rio, avec ses parades hautes en couleur, ses musiques
+                            envoûtantes, et une atmosphère festive incomparable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SECTION BONUS : Témoignages -->
+    <section class="bg-light py-5 section-fade-in" id="testimonials">
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="images/avis.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas les vidéos HTML5.
+            </video>
+            <div class="overlay">
+                <div class="container">
+                    <h2 class="text-center mb-4 fw-bold text-white" style="color: black;">Ils ont voyagé avec nous</h2>
+                    <p class="text-center text-light mb-5">Découvrez les témoignages de nos voyageurs satisfaits qui
+                        partagent leurs expériences inoubliables.</p>
+                    <div class="row text-center g-4">
+                        <div class="col-md-4">
+                            <div class="testimonial-card p-4 shadow rounded">
+                                <blockquote class="fst-italic text-white">"Une organisation parfaite pour notre lune de
+                                    miel à Paris. Merci !"</blockquote>
+                                <p class="mt-3 fw-bold text-white">- Marie & Thomas</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card p-4 shadow rounded">
+                                <blockquote class="fst-italic text-white">"Des paysages de rêve et une équipe au top à
+                                    Bali."</blockquote>
+                                <p class="mt-3 fw-bold text-white">- Ahmed</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card p-4 shadow rounded">
+                                <blockquote class="fst-italic text-white">"Voyage fluide, activités variées. On
+                                    recommande !"</blockquote>
+                                <p class="mt-3 fw-bold text-white">- Clara & Jules</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section footer-brand">
+                <h2>🌍 Let's Go Travel</h2>
+                <p>
+                    Explorez le monde avec confiance. Votre partenaire de voyage
+                    pour des aventures inoubliables.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Offres</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Restons en contact</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre email" required />
+                    <button type="submit">S'abonner</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Let's Go Travel. Tous droits réservés.
+        </div>
+    </footer> -->
+    <?php include 'chatbot-widget.php'; ?>
+
+    <?php include('footer.php'); ?>
+
+</body>
+
+</html>

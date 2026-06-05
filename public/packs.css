@@ -1,0 +1,538 @@
+.offers-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+
+
+.nav-link:hover {
+  color: gray;      
+} 
+.learn-more {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  /* color: white; */
+  background-color: rgba(0, 0, 0, 0.5); /* Noir avec une opacité de 50% */
+  backdrop-filter: blur(10px); /* Flou de 10px */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  backdrop-filter: blur(5px); /* Applique un flou au bouton */
+  -webkit-backdrop-filter: blur(5px); /* Support pour navigateurs Webkit */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.learn-more:hover {
+  background-color: rgba(0, 86, 179, 0.9); /* Couleur au survol */
+  transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6); /* Overlay semi-transparent */
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Ombre pour meilleure lisibilité */
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.learn-more {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.learn-more:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Légère augmentation au survol */
+
+}
+
+
+.background-image {
+  background-image: url('images/offresbg.jpg');
+  background-size: cover;
+  background-position: center;  
+  background-repeat: no-repeat;
+
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  color: white;
+}
+/* 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 24px;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+} */
+
+.hero-content {
+  margin-top: 100px;
+  text-align: left;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.learn-more {
+  background-color: #fff;
+  color: #333;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+.packs-offers {
+  background: #f8f9fa;
+  padding: 2rem 0;
+}
+
+.packs-offers h2 {
+  font-size: 2.5rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Effet d'agrandissement au survol */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre douce au survol */
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #6c757d;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+/* Style de base pour le conteneur */
+.mt-4 {
+  font-family: 'Poppins', Arial, sans-serif; /* Police moderne et élégante */
+  line-height: 1.8;
+  color: #333;
+  background: #f9f9f9; /* Couleur d'arrière-plan subtile */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour ajouter de la profondeur */
+}
+.pack-details {
+  font-family: 'Poppins', sans-serif; /* Police moderne et élégante */
+  line-height: 1.8;
+  background: linear-gradient(120deg, #ffffff, #f3f8ff); /* Dégradé léger et raffiné */
+  border-radius: 25px; /* Coins arrondis pour un look moderne */
+  padding: 40px; /* Espacement confortable */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2); /* Ombre marquée pour de la profondeur */
+  margin: 60px auto; /* Centrage automatique avec espace vertical */
+  max-width: 850px; /* Limitation de la largeur */
+  text-align: left; /* Alignement naturel pour le texte */
+  position: relative; /* Nécessaire pour les décorations */
+  overflow: hidden; /* Gestion des éléments décoratifs */
+  min-height: 450px; /* Hauteur minimale pour éviter les déséquilibres */
+  display: flex; /* Flexbox pour aligner le contenu */
+  flex-direction: column; /* Les éléments s'empilent en colonne */
+  justify-content: center; /* Centrage vertical */
+  align-items: center; /* Centrage horizontal */
+}
+
+/* Décorations */
+.pack-details::before {
+  content: '';
+  position: absolute;
+  top: 10px; /* Positionnement vertical */
+  right: 20px; /* Positionnement horizontal */
+  width: 150px;
+  height: 150px;
+  background: rgba(52, 152, 219, 0.2); /* Cercle bleu translucide */
+  border-radius: 50%; /* Cercle parfait */
+  z-index: 0; /* Derrière le contenu */
+}
+
+.pack-details::after {
+  content: '';
+  position: absolute;
+  bottom: 20px; /* Positionnement vertical */
+  left: 30px; /* Positionnement horizontal */
+  width: 200px;
+  height: 200px;
+  background: rgba(46, 204, 113, 0.2); /* Cercle vert translucide */
+  border-radius: 50%; /* Cercle parfait */
+  z-index: 0; /* Derrière le contenu */
+}
+
+/* S'assurer que le contenu est au-dessus des décorations */
+.pack-details * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Interaction fluide au survol */
+.pack-details:hover {
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3); /* Ombre renforcée */
+  transform: translateY(-5px); /* Légère élévation */
+  transition: all 0.4s ease-in-out; /* Transition douce */
+}
+
+/* Style du titre */
+.pack-details h3 {
+  color: #1a1a2e; /* Couleur sombre pour le contraste */
+  font-size: 2.2rem; /* Grande taille pour capter l’attention */
+  margin-bottom: 25px; /* Espacement sous le titre */
+  font-weight: bold;
+  text-transform: uppercase; /* Style capitalisé */
+  letter-spacing: 1.5px; /* Espacement des lettres pour un look propre */
+  text-align: center; /* Centrage parfait */
+  background: linear-gradient(90deg, #6a11cb, #2575fc); /* Effet dégradé dans le texte */
+  -webkit-background-clip: text; /* Clip texte dégradé */
+  background-clip: text; /* Ajout pour compatibilité avec d'autres navigateurs */
+  -webkit-text-fill-color: transparent; /* Texte transparent */
+}
+
+/* Listes */
+.pack-details ul {
+  list-style-type: none; /* Suppression des puces classiques */
+  padding-left: 0; /* Aucune indentation inutile */
+  margin-top: 25px;
+  width: 100%;
+}
+
+.pack-details ul li {
+  margin-bottom: 18px; /* Espacement entre les éléments */
+  font-size: 1rem; /* Texte plus grand pour lisibilité */
+  display: flex; /* Flexbox pour aligner les icônes et le texte */
+  align-items: center;
+  background: #f7faff; /* Fond léger pour chaque élément */
+  padding: 15px 20px; /* Espacement interne confortable */
+  border-radius: 15px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Ombre légère pour la séparation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet sur les listes au survol */
+.pack-details ul li:hover {
+  transform: translateX(10px); /* Déplacement fluide */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Accentuation de l’ombre */
+}
+
+/* Icônes personnalisées pour les listes */
+.pack-details ul li::before {
+  content: "\f058"; /* Icône Font Awesome (check-circle) */
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #3498db; /* Icône bleue professionnelle */
+  font-size: 1.8rem;
+  margin-right: 15px;
+}
+
+/* Paragraphes */
+.pack-details p {
+  margin-top: 20px;
+  color: #444; /* Couleur douce pour le texte */
+  font-size: 1.1rem;
+  text-align: justify; /* Alignement propre */
+}
+
+/* Liens */
+.pack-details a {
+  text-decoration: none;
+  color: #2575fc; /* Couleur bleue pour les liens */
+  font-weight: bold;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.pack-details a:hover {
+  color: #e63946; /* Accent rouge au survol */
+  text-shadow: 0 2px 5px rgba(230, 57, 70, 0.5); /* Légère ombre */
+}
+
+/* Style pour les icônes et les titres */
+.mt-4 p strong {
+  font-size: 1.1rem;
+  color: #2c3e50; /* Couleur professionnelle et moderne */
+}
+
+.mt-4 i {
+  color: #3498DB; /* Bleu vibrant pour attirer l'attention */
+  margin-right: 5px;
+}
+
+/* Style pour les liens */
+.mt-4 a {
+  text-decoration: none;
+  color: #3498DB;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.mt-4 a:hover {
+  color: #2ecc71; /* Changement de couleur élégant au survol */
+}
+
+/* Style pour les listes */
+.mt-4 ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+.modal-content {
+  background: rgba(255, 255, 255, 0.2); /* Transparence pour l'effet verre */
+  backdrop-filter: blur(10px); /* Flou derrière pour renforcer l'effet de verre */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Douce ombre pour la profondeur */
+  border-radius: 12px; /* Coins arrondis */
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Fine bordure pour accentuer l'effet */
+}
+
+
+
+.mt-4 ul li {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.mt-4 ul li:hover {
+  transform: scale(1.02);
+  background: #f0f8ff;
+}
+
+/* Style pour les prix et les dates */
+.mt-4 p span {
+  color: #555;
+  font-weight: 500;
+}
+
+
+.pack-booking {
+  background: rgba(240, 240, 240, 0.95); /* Fond clair et légèrement transparent */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Douce ombre */
+  padding: 2rem;
+}
+
+.pack-booking h3 {
+  font-size: 1.8rem;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.form-control, .form-select {
+  border-radius: 5px;
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+.check-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.check-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+/* Style pour les colonnes */
+.hero-content {
+  background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+  border-radius: 10px; /* Coins arrondis */
+  padding: 20px; /* Espacement interne */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Ombre */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+}
+
+.hero-content:hover {
+  transform: translateY(-10px); /* Déplacement vers le haut au survol */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); /* Ombre plus prononcée */
+}
+
+/* Style pour les badges */
+.list-group-item .badge {
+  font-size: 1rem;
+  padding: 0.5em 1em;
+}
+.footer {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-brand h2 {
+  color: #ffcc00;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.footer-section h3 {
+  color: #ffa500;
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.newsletter-form button {
+  padding: 10px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #e6b800;
+}
+
+.social-icons {
+  margin-top: 15px;
+}
+
+.social-icons a {
+  color: #ccc;
+  margin-right: 12px;
+  font-size: 20px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ffcc00;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
