@@ -1,0 +1,468 @@
+:root {
+    --primary: #0f1c34;
+    --secondary: #1b2b49;
+    --accent: #00c6ff;
+    --text-light: #ccc;
+    --white: #fff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--primary);
+    color: var(--white);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.navbar {
+    background: transparent;
+    /* padding: 20px 0; */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.fas {
+  /* font-size: 100px;
+  color: red; */
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--accent);
+}
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero {
+    background: url('image/aa.jpg') no-repeat center center; 
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1; */
+}
+  /* .video-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+ .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 28, 52, 0.5);
+    z-index: 0;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    /* padding-top: 20vh;  */
+    text-align: center;
+} 
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  
+  .close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  } 
+  .icon {
+    cursor: pointer;
+  }
+.hero-text h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Segoe UI', sans-serif;
+    /* text-transform: uppercase; */
+}
+
+ .hero-text p {
+    font-size: 20px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+} 
+
+.search-bar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-bar input {
+    flex: 1 1 150px;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.search-bar input::placeholder {
+    color: #eee;
+}
+
+.search-bar button {
+    background: var(--accent);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+/* .search-bar button:hover {
+    background: #0099cc;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+} */
+
+.search-bar input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.search-bar button {
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 0 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background: #0099cc;
+}
+
+.popular-hotels {
+    padding: 60px 0;
+}
+
+.popular-hotels h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+.hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+}
+
+.hotel-card {
+    background: var(--secondary);
+    height: 300px;
+
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.hotel-card:hover {
+    transform: translateY(-10px);
+}
+
+.hotel-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.hotel-info {
+    padding: 20px;
+    text-align: center;
+    color: var(--white);
+    font-family: 'Segoe UI', sans-serif;
+}
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(10px); 
+  }
+  .navbar-brand {
+    font-weight: bold; 
+    color: black;     
+  }
+ 
+  
+  .nav-link {
+    font-weight: bold; 
+    color: black;      
+  }
+  
+  .nav-link:hover {
+    color: gray;       
+  }
+ 
+  .offers-section {
+    background-color: #f8f9fa;
+}
+.hotel-info h3 {
+    margin-bottom: 10px;
+    
+}
+
+.price {
+    color: var(--accent);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.footer {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 50px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-brand h2 {
+    color: #ffcc00;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section h3 {
+    color: #ffa500;
+    margin-bottom: 15px;
+  }
+  
+  .footer-section p,
+  .footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section li {
+    margin-bottom: 8px;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .newsletter-form input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+  }
+  
+  .newsletter-form button {
+    padding: 10px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #e6b800;
+  }
+  
+  .social-icons {
+    margin-top: 15px;
+  }
+  
+  .social-icons a {
+    color: #ccc;
+    margin-right: 12px;
+    font-size: 20px;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #ffcc00;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #aaa;
+  }
+  
+   /* @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }  */
+
+/* Style pour rendre les dropdown-item en noir */
+.dropdown-item {
+    color: black !important; /* Texte en noir */
+    font-weight: 500; /* Optionnel : pour un texte légèrement plus épais */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa; /* Optionnel : couleur de fond au survol */
+    color: #000; /* Assurez-vous que le texte reste noir au survol */
+}

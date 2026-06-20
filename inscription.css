@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+  
+  /* Vidéo de fond */
+  #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7);
+  }
+  
+  /* Wrapper du formulaire */
+  .form-wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Carte du formulaire */
+  .form-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 30px 25px;    
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    animation: fadeIn 1.2s ease forwards;
+  }
+  
+  /* Animation d'apparition */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  
+  .form-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .form-subtitle {
+    font-size: 15px;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 14px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    font-size: 14px;
+    color: #fff;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input::placeholder {
+    color: #ddd;
+  }
+  
+  .form-group input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.4s ease;
+  }
+  
+  .btn-submit:hover {
+    background: linear-gradient(135deg, #0083b0, #00b4db);
+  }
+  
+  .already-account {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #fff;
+  }
+  
+  .already-account a {
+    color: #00b4db;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .already-account a:hover {
+    text-decoration: underline;
+  }
+  /* Flou dynamique sur la navbar */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4); /* Couleur semi-transparente */
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.6); /* Plus opaque quand on scrolle */
+  }
+  
