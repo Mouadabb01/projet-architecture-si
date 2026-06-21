@@ -58,4 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+    function connexionBaseDeDonnees() {
+    var utilisateur = "admin";
+    var motDePasseSecret = "123456789"; 
+    
+    if (utilisateur == "admin") {
+        console.log("Connecté avec le mot de passe : " + motDePasseSecret);
+    }
+}
 });
